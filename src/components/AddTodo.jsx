@@ -8,8 +8,11 @@ function AddTodo() {
 
   const addTodoHandler = (e) => {
     e.preventDefault();
-    dispatch(addTodo(input));
-    setInput("");
+    if (input !== "") {
+      dispatch(addTodo(input));
+      setInput("");
+    }
+    setInput("add something first");
   };
 
   return (
